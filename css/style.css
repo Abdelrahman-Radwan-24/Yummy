@@ -1,0 +1,244 @@
+/*!=======> Global <========*/
+
+body {
+  font-family: "Roboto", serif;
+  background-color: #0d0d0d;
+  overflow: hidden;
+}
+
+/*!=======> Global <========*/
+
+/*!=======> Custom Theme <========*/
+
+::-webkit-scrollbar {
+  width: 0.6875rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 4px #fff;
+}
+
+/*!=======> Custom Theme <========*/
+
+/*?===========> aside */
+aside {
+  width: 260px;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: -260px;
+  min-height: 100vh;
+  background-color: #0d0d0d;
+}
+
+aside .menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+aside .open {
+  top: 0;
+  right: -79px;
+  width: 80px;
+}
+
+aside .open .open-close {
+  display: none;
+}
+
+/*?===========> aside */
+
+/*?===========> Home */
+
+.meal-layout {
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f6f6ca;
+  transition: all 0.5s;
+}
+.meal {
+  cursor: pointer;
+}
+.meal:hover .meal-layout {
+  top: 0;
+}
+
+/*?===========> Home */
+
+/*?===========> search */
+
+.search .form-control,
+.search .form-control:focus {
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.search ::placeholder {
+  color: #6c755d !important;
+}
+
+.search {
+  position: relative;
+  z-index: 9999;
+}
+
+/*?===========> search */
+
+@media (max-width: 900px) {
+  .details {
+    padding-left: 100px;
+  }
+}
+
+.alert {
+  width: fit-content;
+}
+
+/*!=============> loading 1  */
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #fff #fff transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #ff3d00 #ff3d00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #fff #fff transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/*!=============> loading 1  */
+
+/*!=============> loading 2  */
+
+.second-loading {
+  background-color: #000;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+}
+
+.second-loader {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.second-loader::before,
+.second-loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+.second-loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #ff3d00;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+}
+
+/*!=============> loading 2  */
+
+/* ?=========> Eye Icon */
+.eye-icon {
+  position: absolute;
+  top: 12px;
+  right: 43px;
+  cursor: pointer;
+}
+
+/* ?=========> Eye Icon */
